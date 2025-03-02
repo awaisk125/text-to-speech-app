@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech App</title>
+</head>
+<body>
+    <h2>Text-to-Speech App</h2>
+
+    <textarea id="textInput" placeholder="Enter text..." rows="5" cols="50"></textarea><br>
+
+    <label for="language">Select Language:</label>
+    <select id="language">
+        {% for code, name in languages.items() %}
+        <option value="{{ code }}">{{ name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="voice">Select Voice:</label>
+    <select id="voice">
+        <option value="en-US-JennyNeural">Default Voice</option>
+    </select>
+
+    <label for="volume">Volume:</label>
+    <input type="range" id="volume" min="0" max="100" value="100">
+
+    <button onclick="getSpeech()">Speak</button>
+    <button onclick="downloadAudio()">Download</button>
+
+    <script>
+        function getSpeech() {
+            let text = document.getElementById("textInput").value;
+            let language = document.getElementById("language").value;
+            let voice = document.getElementById("voice").value;
+            let volume = document.getElementById("volume").value;
+
+            fetch("/speak", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: text, voice: voice, volume: volume })
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                let url = URL.createObjectURL(blob);
+                let audio = new Audio(url);
+                audio.volume = volume / 100;
+                audio.play();
+            })
+            .catch(error => console.error(error));
+        }
+
+        function downloadAudio() {
+            window.location.href = "/speak?download=true";
+        }
+    </script>
+</body>
+</html>
