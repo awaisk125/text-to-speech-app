@@ -247,7 +247,7 @@ Guinea-Bissau,Portuguese,pt-GW
 Guinea,French,fr-GN
 Guinea,Fulah,ff-GN
 Guinea,Kpelle,kpe-GN
-Guinea,N’Ko,nqo-GN
+Guinea,NKo,nqo-GN
 Guyana,English,en-GY
 Guyana,Spanish,es-GY
 Haiti,French,fr-HT
