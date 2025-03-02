@@ -13,662 +13,637 @@ asyncio.set_event_loop(loop)
 OUTPUT_FILE = "output.mp3"
 
 # Mapping of language codes to user-friendly language names
-Country,Language,Two Letter
-Afghanistan,Pashto,ps-AF
-Afghanistan,Persian,fa-AF
-Afghanistan,Uzbek,uz-AF
-Åland Islands,Swedish,sv-AX
-Albania,Albanian,sq-AL
-Albania,English,en-AL
-Algeria,Arabic,ar-DZ
-Algeria,French,fr-DZ
-Algeria,Kabyle,kab-DZ
-American Samoa,English,en-AS
-Andorra,Catalan,ca-AD
-Andorra,English,en-AD
-Angola,Lingala,ln-AO
-Angola,Portuguese,pt-AO
-Anguilla,English,en-AI
-Anguilla,Spanish,es-AI
-Antigua & Barbuda,English,en-AG
-Antigua & Barbuda,Spanish,es-AG
-Argentina,English,en-AR
-Argentina,Spanish,es-AR
-Armenia,Armenian,hy-AM
-Aruba,Dutch,nl-AW
-Aruba,Spanish,es-AW
-Australia,English,en-AU
-Austria,English,en-AT
-Austria,German,de-AT
-Azerbaijan,Azerbaijani,az-AZ
-Azerbaijan,Azerbaijani,az-AZ
-Bahamas,English,en-BS
-Bahamas,Spanish,es-BS
-Bahrain,Arabic,ar-BH
-Bangladesh,Bangla,bn-BD
-Bangladesh,Chakma,ccp-BD
-Bangladesh,English,en-BD
-Barbados,English,en-BB
-Barbados,Spanish,es-BB
-Belarus,Belarusian,be-BY
-Belarus,Russian,ru-BY
-Belgium,Dutch,nl-BE
-Belgium,English,en-BE
-Belgium,French,fr-BE
-Belgium,German,de-BE
-Belgium,Walloon,wa-BE
-Belize,English,en-BZ
-Belize,Spanish,es-BZ
-Benin,French,fr-BJ
-Benin,Yoruba,yo-BJ
-Bermuda,English,en-BM
-Bermuda,Spanish,es-BM
-Bhutan,Dzongkha,dz-BT
-Bolivia,Quechua,qu-BO
-Bolivia,Spanish,es-BO
-Bosnia & Herzegovina,Bosnian,bs-BA
-Bosnia & Herzegovina,Bosnian,bs-BA
-Bosnia & Herzegovina,Croatian,hr-BA
-Bosnia & Herzegovina,English,en-BA
-Bosnia & Herzegovina,Serbian,sr-BA
-Bosnia & Herzegovina,Serbian,sr-BA
-Botswana,English,en-BW
-Botswana,Tswana,tn-BW
-Brazil,English,en-BR
-Brazil,Portuguese,pt-BR
-Brazil,Spanish,es-BR
-British Indian Ocean Territory,English,en-IO
-British Virgin Islands,English,en-VG
-British Virgin Islands,Spanish,es-VG
-Brunei,Malay,ms-BN
-Brunei,Malay,ms-BN
-Bulgaria,Bulgarian,bg-BG
-Bulgaria,English,en-BG
-Burkina Faso,French,fr-BF
-Burkina Faso,Fulah,ff-BF
-Burundi,English,en-BI
-Burundi,French,fr-BI
-Burundi,Rundi,rn-BI
-Cambodia,Khmer,km-KH
-Cameroon,Aghem,agq-CM
-Cameroon,Bafia,ksf-CM
-Cameroon,Basaa,bas-CM
-Cameroon,Duala,dua-CM
-Cameroon,English,en-CM
-Cameroon,Ewondo,ewo-CM
-Cameroon,French,fr-CM
-Cameroon,Fulah,ff-CM
-Cameroon,Kako,kkj-CM
-Cameroon,Kwasio,nmg-CM
-Cameroon,Meta?,mgo-CM
-Cameroon,Mundang,mua-CM
-Cameroon,Ngiemboon,nnh-CM
-Cameroon,Ngomba,jgo-CM
-Cameroon,Yangben,yav-CM
-Canada,English,en-CA
-Canada,French,fr-CA
-Canada,Inuktitut,iu-CA
-Canada,Mohawk,moh-CA
-Canada,Spanish,es-CA
-Canary Islands,Spanish,es-IC
-Cape Verde,Kabuverdianu,kea-CV
-Cape Verde,Portuguese,pt-CV
-Caribbean Netherlands,Dutch,nl-BQ
-Caribbean Netherlands,Spanish,es-BQ
-Cayman Islands,English,en-KY
-Cayman Islands,Spanish,es-KY
-Central African Republic,French,fr-CF
-Central African Republic,Lingala,ln-CF
-Central African Republic,Sango,sg-CF
-Ceuta & Melilla,Spanish,es-EA
-Chad,Arabic,ar-TD
-Chad,French,fr-TD
-Chile,English,en-CL
-Chile,Mapuche,arn-CL
-Chile,Spanish,es-CL
-China mainland,Cantonese,yue-CN
-China mainland,Chinese,zh-CN
-China mainland,Chinese,zh-CN
-China mainland,English,en-CN
-China mainland,Sichuan Yi,ii-CN
-China mainland,Tibetan,bo-CN
-China mainland,Uyghur,ug-CN
-Christmas Island,English,en-CX
-Cocos (Keeling) Islands,English,en-CC
-Colombia,English,en-CO
-Colombia,Spanish,es-CO
-Comoros,Arabic,ar-KM
-Comoros,French,fr-KM
-Congo - Brazzaville,French,fr-CG
-Congo - Brazzaville,Lingala,ln-CG
-Congo - Kinshasa,French,fr-CD
-Congo - Kinshasa,Lingala,ln-CD
-Congo - Kinshasa,Luba-Katanga,lu-CD
-Congo - Kinshasa,Swahili,sw-CD
-Cook Islands,English,en-CK
-Costa Rica,Spanish,es-CR
-Côte dIvoire,French,fr-CI
-Croatia,Croatian,hr-HR
-Croatia,English,en-HR
-Cuba,Spanish,es-CU
-Curaçao,Dutch,nl-CW
-Curaçao,Spanish,es-CW
-Cyprus,English,en-CY
-Cyprus,Greek,el-CY
-Cyprus,Turkish,tr-CY
-Czechia,Czech,cs-CZ
-Czechia,English,en-CZ
-Denmark,Danish,da-DK
-Denmark,English,en-DK
-Denmark,Faroese,fo-DK
-Diego Garcia,English,en-DG
-Djibouti,Arabic,ar-DJ
-Djibouti,French,fr-DJ
-Djibouti,Somali,so-DJ
-Dominica,English,en-DM
-Dominica,Spanish,es-DM
-Dominican Republic,Spanish,es-DO
-Ecuador,Quechua,qu-EC
-Ecuador,Spanish,es-EC
-Egypt,Arabic,ar-EG
-El Salvador,Spanish,es-SV
-Equatorial Guinea,French,fr-GQ
-Equatorial Guinea,Portuguese,pt-GQ
-Equatorial Guinea,Spanish,es-GQ
-Eritrea,Arabic,ar-ER
-Eritrea,Blin,byn-ER
-Eritrea,English,en-ER
-Eritrea,Geez,gez-ER
-Eritrea,Tigre,tig-ER
-Eritrea,Tigrinya,ti-ER
-Estonia,English,en-EE
-Estonia,Estonian,et-EE
-Eswatini,English,en-SZ
-Eswatini,Swati,ss-SZ
-Ethiopia,Amharic,am-ET
-Ethiopia,Geez,gez-ET
-Ethiopia,Oromo,om-ET
-Ethiopia,Somali,so-ET
-Ethiopia,Tigrinya,ti-ET
-Ethiopia,Wolaytta,wal-ET
-Europe,English,en-150
-Falkland Islands,English,en-FK
-Falkland Islands,Spanish,es-FK
-Faroe Islands,Faroese,fo-FO
-Fiji,English,en-FJ
-Finland,English,en-FI
-Finland,Finnish,fi-FI
-Finland,Inari Sami,smn-FI
-Finland,Northern Sami,se-FI
-Finland,Swedish,sv-FI
-France,Breton,br-FR
-France,Catalan,ca-FR
-France,Corsican,co-FR
-France,English,en-FR
-France,French,fr-FR
-France,Occitan,oc-FR
-France,Portuguese,pt-FR
-France,Swiss German,gsw-FR
-French Guiana,French,fr-GF
-French Guiana,Spanish,es-GF
-French Polynesia,French,fr-PF
-Gabon,French,fr-GA
-Gambia,English,en-GM
-Gambia,Fulah,ff-GM
-Georgia,Georgian,ka-GE
-Georgia,Ossetic,os-GE
-Germany,Colognian,ksh-DE
-Germany,English,en-DE
-Germany,German,de-DE
-Germany,Low German,nds-DE
-Germany,Lower Sorbian,dsb-DE
-Germany,Upper Sorbian,hsb-DE
-Ghana,Akan,ak-GH
-Ghana,English,en-GH
-Ghana,Ewe,ee-GH
-Ghana,Fulah,ff-GH
-Ghana,Ga,gaa-GH
-Ghana,Hausa,ha-GH
-Gibraltar,English,en-GI
-Greece,English,en-GR
-Greece,Greek,el-GR
-Greenland,Danish,da-GL
-Greenland,Kalaallisut,kl-GL
-Greenland,Spanish,es-GL
-Grenada,English,en-GD
-Grenada,Spanish,es-GD
-Guadeloupe,French,fr-GP
-Guadeloupe,Spanish,es-GP
-Guam,English,en-GU
-Guatemala,Spanish,es-GT
-Guernsey,English,en-GG
-Guinea-Bissau,Fulah,ff-GW
-Guinea-Bissau,Portuguese,pt-GW
-Guinea,French,fr-GN
-Guinea,Fulah,ff-GN
-Guinea,Kpelle,kpe-GN
-Guinea,NKo,nqo-GN
-Guyana,English,en-GY
-Guyana,Spanish,es-GY
-Haiti,French,fr-HT
-Haiti,Spanish,es-HT
-Honduras,Spanish,es-HN
-Hong Kong,Cantonese,yue-HK
-Hong Kong,Chinese,zh-HK
-Hong Kong,Chinese,zh-HK
-Hong Kong,English,en-HK
-Hungary,English,en-HU
-Hungary,Hungarian,hu-HU
-Iceland,English,en-IS
-Iceland,Icelandic,is-IS
-India,Assamese,as-IN
-India,Bangla,bn-IN
-India,Bodo,brx-IN
-India,Chakma,ccp-IN
-India,English,en-IN
-India,Gujarati,gu-IN
-India,Hindi,hi-IN
-India,Kannada,kn-IN
-India,Kashmiri,ks-IN
-India,Kashmiri,ks-IN
-India,Kashmiri,ks-IN
-India,Konkani,kok-IN
-India,Malayalam,ml-IN
-India,Manipuri,mni-IN
-India,Manipuri,mni-IN
-India,Marathi,mr-IN
-India,Nepali,ne-IN
-India,Odia,or-IN
-India,Punjabi,pa-IN
-India,Sanskrit,sa-IN
-India,Santali,sat-IN
-India,Santali,sat-IN
-India,Tamil,ta-IN
-India,Telugu,te-IN
-India,Tibetan,bo-IN
-India,Urdu,ur-IN
-India,Urdu,ur-IN
-India,Urdu,ur-IN
-Indonesia,English,en-ID
-Indonesia,Indonesian,id-ID
-Indonesia,Javanese,jv-ID
-Iran,"Kurdish, Sorani",ckb-IR
-Iran,Mazanderani,mzn-IR
-Iran,Northern Luri,lrc-IR
-Iran,Persian,fa-IR
-Iraq,Arabic,ar-IQ
-Iraq,"Kurdish, Sorani",ckb-IQ
-Iraq,Northern Luri,lrc-IQ
-Iraq,Syriac,syr-IQ
-Ireland,English,en-IE
-Ireland,Irish,ga-IE
-Isle of Man,English,en-IM
-Isle of Man,Manx,gv-IM
-Israel,Arabic,ar-IL
-Israel,English,en-IL
-Israel,Hebrew,he-IL
-Italy,Catalan,ca-IT
-Italy,English,en-IT
-Italy,Friulian,fur-IT
-Italy,German,de-IT
-Italy,Italian,it-IT
-Italy,Sardinian,sc-IT
-Italy,Sicilian,scn-IT
-Jamaica,English,en-JM
-Japan,English,en-JP
-Japan,Japanese,ja-JP
-Jersey,English,en-JE
-Jordan,Arabic,ar-JO
-Kazakhstan,Kazakh,kk-KZ
-Kazakhstan,Russian,ru-KZ
-Kenya,Embu,ebu-KE
-Kenya,English,en-KE
-Kenya,Gusii,guz-KE
-Kenya,Kalenjin,kln-KE
-Kenya,Kamba,kam-KE
-Kenya,Kikuyu,ki-KE
-Kenya,Luo,luo-KE
-Kenya,Luyia,luy-KE
-Kenya,Masai,mas-KE
-Kenya,Meru,mer-KE
-Kenya,Oromo,om-KE
-Kenya,Samburu,saq-KE
-Kenya,Somali,so-KE
-Kenya,Swahili,sw-KE
-Kenya,Taita,dav-KE
-Kenya,Teso,teo-KE
-Kiribati,English,en-KI
-Kosovo,Albanian,sq-XK
-Kosovo,Serbian,sr-XK
-Kosovo,Serbian,sr-XK
-Kuwait,Arabic,ar-KW
-Kyrgyzstan,Kyrgyz,ky-KG
-Kyrgyzstan,Russian,ru-KG
-Laos,Lao,lo-LA
-Latin America,Spanish,es-419
-Latvia,English,en-LV
-Latvia,Latvian,lv-LV
-Lebanon,Arabic,ar-LB
-Lesotho,English,en-LS
-Lesotho,Southern Sotho,st-LS
-Liberia,English,en-LR
-Liberia,Fulah,ff-LR
-Liberia,Kpelle,kpe-LR
-Liberia,Vai,vai-LR
-Liberia,Vai,vai-LR
-Libya,Arabic,ar-LY
-Liechtenstein,German,de-LI
-Liechtenstein,Swiss German,gsw-LI
-Lithuania,English,en-LT
-Lithuania,Lithuanian,lt-LT
-Luxembourg,English,en-LU
-Luxembourg,French,fr-LU
-Luxembourg,German,de-LU
-Luxembourg,Luxembourgish,lb-LU
-Luxembourg,Portuguese,pt-LU
-Macao,Chinese,zh-MO
-Macao,Chinese,zh-MO
-Macao,English,en-MO
-Macao,Portuguese,pt-MO
-Madagascar,English,en-MG
-Madagascar,French,fr-MG
-Madagascar,Malagasy,mg-MG
-Malawi,English,en-MW
-Malawi,Nyanja,ny-MW
-Malaysia,English,en-MY
-Malaysia,Malay,ms-MY
-Malaysia,Malay,ms-MY
-Malaysia,Tamil,ta-MY
-Maldives,Dhivehi,dv-MV
-Maldives,English,en-MV
-Mali,Bambara,bm-ML
-Mali,French,fr-ML
-Mali,Koyra Chiini,khq-ML
-Mali,Koyraboro Senni,ses-ML
-Malta,English,en-MT
-Malta,Maltese,mt-MT
-Marshall Islands,English,en-MH
-Martinique,French,fr-MQ
-Martinique,Spanish,es-MQ
-Mauritania,Arabic,ar-MR
-Mauritania,French,fr-MR
-Mauritania,Fulah,ff-MR
-Mauritius,English,en-MU
-Mauritius,French,fr-MU
-Mauritius,Morisyen,mfe-MU
-Mayotte,French,fr-YT
-Mexico,English,en-MX
-Mexico,Spanish,es-MX
-Micronesia,English,en-FM
-Moldova,Romanian,ro-MD
-Moldova,Russian,ru-MD
-Monaco,French,fr-MC
-Mongolia,Mongolian,mn-MN
-Montenegro,English,en-ME
-Montenegro,Serbian,sr-ME
-Montenegro,Serbian,sr-ME
-Montserrat,English,en-MS
-Montserrat,Spanish,es-MS
-Morocco,Arabic,ar-MA
-Morocco,Central Atlas Tamazight,tzm-MA
-Morocco,French,fr-MA
-Morocco,Standard Moroccan Tamazight,zgh-MA
-Morocco,Tachelhit,shi-MA
-Morocco,Tachelhit,shi-MA
-Mozambique,Makhuwa-Meetto,mgh-MZ
-Mozambique,Portuguese,pt-MZ
-Mozambique,Sena,seh-MZ
-Myanmar (Burma),Burmese,my-MM
-Myanmar (Burma),English,en-MM
-Namibia,Afrikaans,af-NA
-Namibia,English,en-NA
-Namibia,Nama,naq-NA
-Nauru,English,en-NR
-Nepal,Nepali,ne-NP
-Netherlands,Dutch,nl-NL
-Netherlands,English,en-NL
-Netherlands,Low German,nds-NL
-Netherlands,Western Frisian,fy-NL
-New Caledonia,French,fr-NC
-New Zealand,English,en-NZ
-New Zealand,Maori,mi-NZ
-Nicaragua,Spanish,es-NI
-Niger,French,fr-NE
-Niger,Fulah,ff-NE
-Niger,Hausa,ha-NE
-Niger,Tasawaq,twq-NE
-Niger,Zarma,dje-NE
-Nigeria,English,en-NG
-Nigeria,Fulah,ff-NG
-Nigeria,Hausa,ha-NG
-Nigeria,Igbo,ig-NG
-Nigeria,Jju,kaj-NG
-Nigeria,Tyap,kcg-NG
-Nigeria,Yoruba,yo-NG
-Niue,English,en-NU
-Norfolk Island,English,en-NF
-North Korea,Korean,ko-KP
-North Macedonia,Albanian,sq-MK
-North Macedonia,Macedonian,mk-MK
-Northern Mariana Islands,English,en-MP
-Norway,English,en-NO
-Norway,Northern Sami,se-NO
-Norway,Norwegian Bokmål,nb-NO
-Norway,Norwegian Nynorsk,nn-NO
-Oman,Arabic,ar-OM
-Pakistan,English,en-PK
-Pakistan,Pashto,ps-PK
-Pakistan,Punjabi,pa-PK
-Pakistan,Punjabi,pa-PK
-Pakistan,Sindhi,sd-PK
-Pakistan,Urdu,ur-PK
-Pakistan,Urdu,ur-PK
-Pakistan,Urdu,ur-PK
-Palau,English,en-PW
-Palestinian Territories,Arabic,ar-PS
-Panama,Spanish,es-PA
-Papua New Guinea,English,en-PG
-Paraguay,Guarani,gn-PY
-Paraguay,Spanish,es-PY
-Peru,Quechua,qu-PE
-Peru,Spanish,es-PE
-Philippines,Cebuano,ceb-PH
-Philippines,English,en-PH
-Philippines,Filipino,fil-PH
-Philippines,Spanish,es-PH
-Pitcairn Islands,English,en-PN
-Poland,English,en-PL
-Poland,Polish,pl-PL
-Portugal,English,en-PT
-Portugal,Portuguese,pt-PT
-Puerto Rico,English,en-PR
-Puerto Rico,Spanish,es-PR
-Qatar,Arabic,ar-QA
-Réunion,French,fr-RE
-Romania,English,en-RO
-Romania,Romanian,ro-RO
-Russia,Bashkir,ba-RU
-Russia,Chechen,ce-RU
-Russia,Chuvash,cv-RU
-Russia,English,en-RU
-Russia,Erzya,myv-RU
-Russia,Ossetic,os-RU
-Russia,Russian,ru-RU
-Russia,Sakha,sah-RU
-Russia,Tatar,tt-RU
-Rwanda,English,en-RW
-Rwanda,French,fr-RW
-Rwanda,Kinyarwanda,rw-RW
-Samoa,English,en-WS
-San Marino,Italian,it-SM
-São Tomé & Príncipe,Portuguese,pt-ST
-Saudi Arabia,Arabic,ar-SA
-Saudi Arabia,English,en-SA
-Senegal,French,fr-SN
-Senegal,Fulah,ff-SN
-Senegal,Jola-Fonyi,dyo-SN
-Senegal,Wolof,wo-SN
-Serbia,English,en-RS
-Serbia,Serbian,sr-RS
-Serbia,Serbian,sr-RS
-Seychelles,English,en-SC
-Seychelles,French,fr-SC
-Sierra Leone,English,en-SL
-Sierra Leone,Fulah,ff-SL
-Singapore,Chinese,zh-SG
-Singapore,English,en-SG
-Singapore,Malay,ms-SG
-Singapore,Tamil,ta-SG
-Sint Maarten,Dutch,nl-SX
-Sint Maarten,English,en-SX
-Sint Maarten,Spanish,es-SX
-Slovakia,English,en-SK
-Slovakia,Slovak,sk-SK
-Slovenia,English,en-SI
-Slovenia,Slovenian,sl-SI
-Solomon Islands,English,en-SB
-Somalia,Arabic,ar-SO
-Somalia,Somali,so-SO
-South Africa,Afrikaans,af-ZA
-South Africa,English,en-ZA
-South Africa,Northern Sotho,nso-ZA
-South Africa,South Ndebele,nr-ZA
-South Africa,Southern Sotho,st-ZA
-South Africa,Swati,ss-ZA
-South Africa,Tsonga,ts-ZA
-South Africa,Tswana,tn-ZA
-South Africa,Venda,ve-ZA
-South Africa,Xhosa,xh-ZA
-South Africa,Zulu,zu-ZA
-South Korea,English,en-KR
-South Korea,Korean,ko-KR
-South Sudan,Arabic,ar-SS
-South Sudan,English,en-SS
-South Sudan,Nuer,nus-SS
-Spain,Asturian,ast-ES
-Spain,Basque,eu-ES
-Spain,Catalan,ca-ES
-Spain,English,en-ES
-Spain,Galician,gl-ES
-Spain,Spanish,es-ES
-Sri Lanka,Sinhala,si-LK
-Sri Lanka,Tamil,ta-LK
-St. Barthélemy,French,fr-BL
-St. Barthélemy,Spanish,es-BL
-St. Helena,English,en-SH
-St. Kitts & Nevis,English,en-KN
-St. Kitts & Nevis,Spanish,es-KN
-St. Lucia,English,en-LC
-St. Lucia,Spanish,es-LC
-St. Martin,French,fr-MF
-St. Martin,Spanish,es-MF
-St. Pierre & Miquelon,French,fr-PM
-St. Pierre & Miquelon,Spanish,es-PM
-St. Vincent & Grenadines,English,en-VC
-St. Vincent & Grenadines,Spanish,es-VC
-Sudan,Arabic,ar-SD
-Sudan,English,en-SD
-Suriname,Dutch,nl-SR
-Suriname,Spanish,es-SR
-Svalbard & Jan Mayen,Norwegian Bokmål,nb-SJ
-Sweden,English,en-SE
-Sweden,Northern Sami,se-SE
-Sweden,Swedish,sv-SE
-Switzerland,English,en-CH
-Switzerland,French,fr-CH
-Switzerland,German,de-CH
-Switzerland,Italian,it-CH
-Switzerland,Portuguese,pt-CH
-Switzerland,Romansh,rm-CH
-Switzerland,Swiss German,gsw-CH
-Switzerland,Walser,wae-CH
-Syria,Arabic,ar-SY
-Syria,French,fr-SY
-Syria,Syriac,syr-SY
-Taiwan,Chinese,zh-TW
-Taiwan,English,en-TW
-Taiwan,Taroko,trv-TW
-Tajikistan,Tajik,tg-TJ
-Tanzania,Asu,asa-TZ
-Tanzania,Bena,bez-TZ
-Tanzania,English,en-TZ
-Tanzania,Langi,lag-TZ
-Tanzania,Machame,jmc-TZ
-Tanzania,Makonde,kde-TZ
-Tanzania,Masai,mas-TZ
-Tanzania,Rombo,rof-TZ
-Tanzania,Rwa,rwk-TZ
-Tanzania,Sangu,sbp-TZ
-Tanzania,Shambala,ksb-TZ
-Tanzania,Swahili,sw-TZ
-Tanzania,Vunjo,vun-TZ
-Thailand,English,en-TH
-Thailand,Thai,th-TH
-Timor-Leste,Portuguese,pt-TL
-Togo,Ewe,ee-TG
-Togo,French,fr-TG
-Tokelau,English,en-TK
-Tonga,English,en-TO
-Tonga,Tongan,to-TO
-Trinidad & Tobago,English,en-TT
-Trinidad & Tobago,Spanish,es-TT
-Tunisia,Arabic,ar-TN
-Tunisia,French,fr-TN
-Turkey,English,en-TR
-Turkey,Kurdish,ku-TR
-Turkey,Turkish,tr-TR
-Turkmenistan,Turkmen,tk-TM
-Turks & Caicos Islands,English,en-TC
-Turks & Caicos Islands,Spanish,es-TC
-Tuvalu,English,en-TV
-U.S. Outlying Islands,English,en-UM
-U.S. Virgin Islands,English,en-VI
-U.S. Virgin Islands,Spanish,es-VI
-Uganda,Chiga,cgg-UG
-Uganda,English,en-UG
-Uganda,Ganda,lg-UG
-Uganda,Nyankole,nyn-UG
-Uganda,Soga,xog-UG
-Uganda,Swahili,sw-UG
-Uganda,Teso,teo-UG
-Ukraine,English,en-UA
-Ukraine,Russian,ru-UA
-Ukraine,Ukrainian,uk-UA
-United Arab Emirates,Arabic,ar-AE
-United Arab Emirates,English,en-AE
-United Kingdom,Cornish,kw-GB
-United Kingdom,English,en-GB
-United Kingdom,Scottish Gaelic,gd-GB
-United Kingdom,Welsh,cy-GB
-United States,Cherokee,chr-US
-United States,English (United States),en-US
-United States,English,en-US
-United States,Hawaiian,haw-US
-United States,Lakota,lkt-US
-United States,Spanish,es-US
-Uruguay,Spanish,es-UY
-Uzbekistan,Uzbek,uz-UZ
-Uzbekistan,Uzbek,uz-UZ
-Vanuatu,English,en-VU
-Vanuatu,French,fr-VU
-Vatican City,Italian,it-VA
-Venezuela,Spanish,es-VE
-Vietnam,Vietnamese,vi-VN
-Wallis & Futuna,French,fr-WF
-Western Sahara,Arabic,ar-EH
-World,Arabic,ar-001
-World,English,en-001
-World,Esperanto,eo-001
-World,Ido,io-001
-World,Interlingua,ia-001
-World,Lojban,jbo-001
-World,Yiddish,yi-001
-Yemen,Arabic,ar-YE
-Zambia,Bemba,bem-ZM
-Zambia,English,en-ZM
-Zimbabwe,English,en-ZW
-Zimbabwe,North Ndebele,nd-ZW
-Zimbabwe,Shona,sn-ZW
+LANGUAGE_NAMES = {
+        "ps-AF": "Pashto-Afghanistan",
+        "fa-AF": "Persian-Afghanistan",
+        "uz-AF": "Uzbek-Afghanistan",
+        "sv-AX": "Swedish-Åland Islands",
+        "sq-AL": "Albanian-Albania",
+        "en-AL": "English-Albania",
+        "ar-DZ": "Arabic-Algeria",
+        "fr-DZ": "French-Algeria",
+        "kab-DZ": "Kabyle-Algeria",
+        "en-AS": "English-American Samoa",
+        "ca-AD": "Catalan-Andorra",
+        "en-AD": "English-Andorra",
+        "ln-AO": "Lingala-Angola",
+        "pt-AO": "Portuguese-Angola",
+        "en-AI": "English-Anguilla",
+        "es-AI": "Spanish-Anguilla",
+        "en-AG": "English-Antigua & Barbuda",
+        "es-AG": "Spanish-Antigua & Barbuda",
+        "en-AR": "English-Argentina",
+        "es-AR": "Spanish-Argentina",
+        "hy-AM": "Armenian-Armenia",
+        "nl-AW": "Dutch-Aruba",
+        "es-AW": "Spanish-Aruba",
+        "en-AU": "English-Australia",
+        "en-AT": "English-Austria",
+        "de-AT": "German-Austria",
+        "az-AZ": "Azerbaijani-Azerbaijan",
+        "en-BS": "English-Bahamas",
+        "es-BS": "Spanish-Bahamas",
+        "ar-BH": "Arabic-Bahrain",
+        "bn-BD": "Bangla-Bangladesh",
+        "ccp-BD": "Chakma-Bangladesh",
+        "en-BD": "English-Bangladesh",
+        "en-BB": "English-Barbados",
+        "es-BB": "Spanish-Barbados",
+        "be-BY": "Belarusian-Belarus",
+        "ru-BY": "Russian-Belarus",
+        "nl-BE": "Dutch-Belgium",
+        "en-BE": "English-Belgium",
+        "fr-BE": "French-Belgium",
+        "de-BE": "German-Belgium",
+        "wa-BE": "Walloon-Belgium",
+        "en-BZ": "English-Belize",
+        "es-BZ": "Spanish-Belize",
+        "fr-BJ": "French-Benin",
+        "yo-BJ": "Yoruba-Benin",
+        "en-BM": "English-Bermuda",
+        "es-BM": "Spanish-Bermuda",
+        "dz-BT": "Dzongkha-Bhutan",
+        "qu-BO": "Quechua-Bolivia",
+        "es-BO": "Spanish-Bolivia",
+        "bs-BA": "Bosnian-Bosnia & Herzegovina",
+        "hr-BA": "Croatian-Bosnia & Herzegovina",
+        "en-BA": "English-Bosnia & Herzegovina",
+        "sr-BA": "Serbian-Bosnia & Herzegovina",
+        "en-BW": "English-Botswana",
+        "tn-BW": "Tswana-Botswana",
+        "en-BR": "English-Brazil",
+        "pt-BR": "Portuguese-Brazil",
+        "es-BR": "Spanish-Brazil",
+        "en-IO": "English-British Indian Ocean Territory",
+        "en-VG": "English-British Virgin Islands",
+        "es-VG": "Spanish-British Virgin Islands",
+        "ms-BN": "Malay-Brunei",
+        "bg-BG": "Bulgarian-Bulgaria",
+        "en-BG": "English-Bulgaria",
+        "fr-BF": "French-Burkina Faso",
+        "ff-BF": "Fulah-Burkina Faso",
+        "en-BI": "English-Burundi",
+        "fr-BI": "French-Burundi",
+        "rn-BI": "Rundi-Burundi",
+        "km-KH": "Khmer-Cambodia",
+        "agq-CM": "Aghem-Cameroon",
+        "ksf-CM": "Bafia-Cameroon",
+        "bas-CM": "Basaa-Cameroon",
+        "dua-CM": "Duala-Cameroon",
+        "en-CM": "English-Cameroon",
+        "ewo-CM": "Ewondo-Cameroon",
+        "fr-CM": "French-Cameroon",
+        "ff-CM": "Fulah-Cameroon",
+        "kkj-CM": "Kako-Cameroon",
+        "nmg-CM": "Kwasio-Cameroon",
+        "mgo-CM": "Meta-Cameroon",
+        "mua-CM": "Mundang-Cameroon",
+        "nnh-CM": "Ngiemboon-Cameroon",
+        "jgo-CM": "Ngomba-Cameroon",
+        "yav-CM": "Yangben-Cameroon",
+        "en-CA": "English-Canada",
+        "fr-CA": "French-Canada",
+        "iu-CA": "Inuktitut-Canada",
+        "moh-CA": "Mohawk-Canada",
+        "es-CA": "Spanish-Canada",
+        "es-IC": "Spanish-Canary Islands",
+        "kea-CV": "Kabuverdianu-Cape Verde",
+        "pt-CV": "Portuguese-Cape Verde",
+        "nl-BQ": "Dutch-Caribbean Netherlands",
+        "es-BQ": "Spanish-Caribbean Netherlands",
+        "en-KY": "English-Cayman Islands",
+        "es-KY": "Spanish-Cayman Islands",
+        "fr-CF": "French-Central African Republic",
+        "ln-CF": "Lingala-Central African Republic",
+        "sg-CF": "Sango-Central African Republic",
+        "es-EA": "Spanish-Ceuta & Melilla",
+        "ar-TD": "Arabic-Chad",
+        "fr-TD": "French-Chad",
+        "en-CL": "English-Chile",
+        "arn-CL": "Mapuche-Chile",
+        "es-CL": "Spanish-Chile",
+        "yue-CN": "Cantonese-China mainland",
+        "zh-CN": "Chinese-China mainland",
+        "en-CN": "English-China mainland",
+        "ii-CN": "Sichuan Yi-China mainland",
+        "bo-CN": "Tibetan-China mainland",
+        "ug-CN": "Uyghur-China mainland",
+        "en-CX": "English-Christmas Island",
+        "en-CC": "English-Cocos (Keeling) Islands",
+        "en-CO": "English-Colombia",
+        "es-CO": "Spanish-Colombia",
+        "ar-KM": "Arabic-Comoros",
+        "fr-KM": "French-Comoros",
+        "fr-CG": "French-Congo - Brazzaville",
+        "ln-CG": "Lingala-Congo - Brazzaville",
+        "fr-CD": "French-Congo - Kinshasa",
+        "ln-CD": "Lingala-Congo - Kinshasa",
+        "lu-CD": "Luba-Katanga-Congo - Kinshasa",
+        "sw-CD": "Swahili-Congo - Kinshasa",
+        "en-CK": "English-Cook Islands",
+        "es-CR": "Spanish-Costa Rica",
+        "fr-CI": "French-Côte d’Ivoire",
+        "hr-HR": "Croatian-Croatia",
+        "en-HR": "English-Croatia",
+        "es-CU": "Spanish-Cuba",
+        "nl-CW": "Dutch-Curaçao",
+        "es-CW": "Spanish-Curaçao",
+        "en-CY": "English-Cyprus",
+        "el-CY": "Greek-Cyprus",
+        "tr-CY": "Turkish-Cyprus",
+        "cs-CZ": "Czech-Czechia",
+        "en-CZ": "English-Czechia",
+        "da-DK": "Danish-Denmark",
+        "en-DK": "English-Denmark",
+        "fo-DK": "Faroese-Denmark",
+        "en-DG": "English-Diego Garcia",
+        "ar-DJ": "Arabic-Djibouti",
+        "fr-DJ": "French-Djibouti",
+        "so-DJ": "Somali-Djibouti",
+        "en-DM": "English-Dominica",
+        "es-DM": "Spanish-Dominica",
+        "es-DO": "Spanish-Dominican Republic",
+        "qu-EC": "Quechua-Ecuador",
+        "es-EC": "Spanish-Ecuador",
+        "ar-EG": "Arabic-Egypt",
+        "es-SV": "Spanish-El Salvador",
+        "fr-GQ": "French-Equatorial Guinea",
+        "pt-GQ": "Portuguese-Equatorial Guinea",
+        "es-GQ": "Spanish-Equatorial Guinea",
+        "ar-ER": "Arabic-Eritrea",
+        "byn-ER": "Blin-Eritrea",
+        "en-ER": "English-Eritrea",
+        "gez-ER": "Geez-Eritrea",
+        "tig-ER": "Tigre-Eritrea",
+        "ti-ER": "Tigrinya-Eritrea",
+        "en-EE": "English-Estonia",
+        "et-EE": "Estonian-Estonia",
+        "en-SZ": "English-Eswatini",
+        "ss-SZ": "Swati-Eswatini",
+        "am-ET": "Amharic-Ethiopia",
+        "gez-ET": "Geez-Ethiopia",
+        "om-ET": "Oromo-Ethiopia",
+        "so-ET": "Somali-Ethiopia",
+        "ti-ET": "Tigrinya-Ethiopia",
+        "wal-ET": "Wolaytta-Ethiopia",
+        "en-150": "English-Europe",
+        "en-FK": "English-Falkland Islands",
+        "es-FK": "Spanish-Falkland Islands",
+        "fo-FO": "Faroese-Faroe Islands",
+        "en-FJ": "English-Fiji",
+        "en-FI": "English-Finland",
+        "fi-FI": "Finnish-Finland",
+        "smn-FI": "Inari Sami-Finland",
+        "se-FI": "Northern Sami-Finland",
+        "sv-FI": "Swedish-Finland",
+        "br-FR": "Breton-France",
+        "ca-FR": "Catalan-France",
+        "co-FR": "Corsican-France",
+        "en-FR": "English-France",
+        "fr-FR": "French-France",
+        "oc-FR": "Occitan-France",
+        "pt-FR": "Portuguese-France",
+        "gsw-FR": "Swiss German-France",
+        "fr-GF": "French-French Guiana",
+        "es-GF": "Spanish-French Guiana",
+        "fr-PF": "French-French Polynesia",
+        "fr-GA": "French-Gabon",
+        "en-GM": "English-Gambia",
+        "ff-GM": "Fulah-Gambia",
+        "ka-GE": "Georgian-Georgia",
+        "os-GE": "Ossetic-Georgia",
+        "ksh-DE": "Colognian-Germany",
+        "en-DE": "English-Germany",
+        "de-DE": "German-Germany",
+        "nds-DE": "Low German-Germany",
+        "dsb-DE": "Lower Sorbian-Germany",
+        "hsb-DE": "Upper Sorbian-Germany",
+        "ak-GH": "Akan-Ghana",
+        "en-GH": "English-Ghana",
+        "ee-GH": "Ewe-Ghana",
+        "ff-GH": "Fulah-Ghana",
+        "gaa-GH": "Ga-Ghana",
+        "ha-GH": "Hausa-Ghana",
+        "en-GI": "English-Gibraltar",
+        "en-GR": "English-Greece",
+        "el-GR": "Greek-Greece",
+        "da-GL": "Danish-Greenland",
+        "kl-GL": "Kalaallisut-Greenland",
+        "es-GL": "Spanish-Greenland",
+        "en-GD": "English-Grenada",
+        "es-GD": "Spanish-Grenada",
+        "fr-GP": "French-Guadeloupe",
+        "es-GP": "Spanish-Guadeloupe",
+        "en-GU": "English-Guam",
+        "es-GT": "Spanish-Guatemala",
+        "en-GG": "English-Guernsey",
+        "ff-GW": "Fulah-Guinea-Bissau",
+        "pt-GW": "Portuguese-Guinea-Bissau",
+        "fr-GN": "French-Guinea",
+        "ff-GN": "Fulah-Guinea",
+        "kpe-GN": "Kpelle-Guinea",
+        "nqo-GN": "N’Ko-Guinea",
+        "en-GY": "English-Guyana",
+        "es-GY": "Spanish-Guyana",
+        "fr-HT": "French-Haiti",
+        "es-HT": "Spanish-Haiti",
+        "es-HN": "Spanish-Honduras",
+        "yue-HK": "Cantonese-Hong Kong",
+        "zh-HK": "Chinese-Hong Kong",
+        "en-HK": "English-Hong Kong",
+        "en-HU": "English-Hungary",
+        "hu-HU": "Hungarian-Hungary",
+        "en-IS": "English-Iceland",
+        "is-IS": "Icelandic-Iceland",
+        "as-IN": "Assamese-India",
+        "bn-IN": "Bangla-India",
+        "brx-IN": "Bodo-India",
+        "ccp-IN": "Chakma-India",
+        "en-IN": "English-India",
+        "gu-IN": "Gujarati-India",
+        "hi-IN": "Hindi-India",
+        "kn-IN": "Kannada-India",
+        "ks-IN": "Kashmiri-India",
+        "kok-IN": "Konkani-India",
+        "ml-IN": "Malayalam-India",
+        "mni-IN": "Manipuri-India",
+        "mr-IN": "Marathi-India",
+        "ne-IN": "Nepali-India",
+        "or-IN": "Odia-India",
+        "pa-IN": "Punjabi-India",
+        "sa-IN": "Sanskrit-India",
+        "sat-IN": "Santali-India",
+        "ta-IN": "Tamil-India",
+        "te-IN": "Telugu-India",
+        "bo-IN": "Tibetan-India",
+        "ur-IN": "Urdu-India",
+        "en-ID": "English-Indonesia",
+        "id-ID": "Indonesian-Indonesia",
+        "jv-ID": "Javanese-Indonesia",
+        "ckb-IR": "Kurdish, Sorani-Iran",
+        "mzn-IR": "Mazanderani-Iran",
+        "lrc-IR": "Northern Luri-Iran",
+        "fa-IR": "Persian-Iran",
+        "ar-IQ": "Arabic-Iraq",
+        "ckb-IQ": "Kurdish, Sorani-Iraq",
+        "lrc-IQ": "Northern Luri-Iraq",
+        "syr-IQ": "Syriac-Iraq",
+        "en-IE": "English-Ireland",
+        "ga-IE": "Irish-Ireland",
+        "en-IM": "English-Isle of Man",
+        "gv-IM": "Manx-Isle of Man",
+        "ar-IL": "Arabic-Israel",
+        "en-IL": "English-Israel",
+        "he-IL": "Hebrew-Israel",
+        "ca-IT": "Catalan-Italy",
+        "en-IT": "English-Italy",
+        "fur-IT": "Friulian-Italy",
+        "de-IT": "German-Italy",
+        "it-IT": "Italian-Italy",
+        "sc-IT": "Sardinian-Italy",
+        "scn-IT": "Sicilian-Italy",
+        "en-JM": "English-Jamaica",
+        "en-JP": "English-Japan",
+        "ja-JP": "Japanese-Japan",
+        "en-JE": "English-Jersey",
+        "ar-JO": "Arabic-Jordan",
+        "kk-KZ": "Kazakh-Kazakhstan",
+        "ru-KZ": "Russian-Kazakhstan",
+        "ebu-KE": "Embu-Kenya",
+        "en-KE": "English-Kenya",
+        "guz-KE": "Gusii-Kenya",
+        "kln-KE": "Kalenjin-Kenya",
+        "kam-KE": "Kamba-Kenya",
+        "ki-KE": "Kikuyu-Kenya",
+        "luo-KE": "Luo-Kenya",
+        "luy-KE": "Luyia-Kenya",
+        "mas-KE": "Masai-Kenya",
+        "mer-KE": "Meru-Kenya",
+        "om-KE": "Oromo-Kenya",
+        "saq-KE": "Samburu-Kenya",
+        "so-KE": "Somali-Kenya",
+        "sw-KE": "Swahili-Kenya",
+        "dav-KE": "Taita-Kenya",
+        "teo-KE": "Teso-Kenya",
+        "en-KI": "English-Kiribati",
+        "sq-XK": "Albanian-Kosovo",
+        "sr-XK": "Serbian-Kosovo",
+        "ar-KW": "Arabic-Kuwait",
+        "ky-KG": "Kyrgyz-Kyrgyzstan",
+		"lo-LA": "Lao-Laos",
+		"es-419": "Spanish-Latin America",
+		"en-LV": "English-Latvia",
+		"lv-LV": "Latvian-Latvia",
+		"ar-LB": "Arabic-Lebanon",
+		"en-LS": "English-Lesotho",
+		"st-LS": "Southern Sotho-Lesotho",
+		"en-LR": "English-Liberia",
+		"ff-LR": "Fulah-Liberia",
+		"kpe-LR": "Kpelle-Liberia",
+		"vai-LR": "Vai-Liberia",
+		"ar-LY": "Arabic-Libya",
+		"de-LI": "German-Liechtenstein",
+		"gsw-LI": "Swiss German-Liechtenstein",
+		"en-LT": "English-Lithuania",
+		"lt-LT": "Lithuanian-Lithuania",
+		"en-LU": "English-Luxembourg",
+		"fr-LU": "French-Luxembourg",
+		"de-LU": "German-Luxembourg",
+		"lb-LU": "Luxembourgish-Luxembourg",
+		"pt-LU": "Portuguese-Luxembourg",
+		"zh-MO": "Chinese-Macao",
+		"en-MO": "English-Macao",
+		"pt-MO": "Portuguese-Macao",
+		"en-MG": "English-Madagascar",
+		"fr-MG": "French-Madagascar",
+		"mg-MG": "Malagasy-Madagascar",
+		"en-MW": "English-Malawi",
+		"ny-MW": "Nyanja-Malawi",
+		"en-MY": "English-Malaysia",
+		"ms-MY": "Malay-Malaysia",
+		"ta-MY": "Tamil-Malaysia",
+		"dv-MV": "Dhivehi-Maldives",
+		"en-MV": "English-Maldives",
+		"bm-ML": "Bambara-Mali",
+		"fr-ML": "French-Mali",
+		"khq-ML": "Koyra Chiini-Mali",
+		"ses-ML": "Koyraboro Senni-Mali",
+		"en-MT": "English-Malta",
+		"mt-MT": "Maltese-Malta",
+		"en-MH": "English-Marshall Islands",
+		"fr-MQ": "French-Martinique",
+		"es-MQ": "Spanish-Martinique",
+		"ar-MR": "Arabic-Mauritania",
+		"fr-MR": "French-Mauritania",
+		"ff-MR": "Fulah-Mauritania",
+		"en-MU": "English-Mauritius",
+		"fr-MU": "French-Mauritius",
+		"mfe-MU": "Morisyen-Mauritius",
+		"fr-YT": "French-Mayotte",
+		"en-MX": "English-Mexico",
+		"es-MX": "Spanish-Mexico",
+		"en-FM": "English-Micronesia",
+		"ro-MD": "Romanian-Moldova",
+		"ru-MD": "Russian-Moldova",
+		"fr-MC": "French-Monaco",
+		"mn-MN": "Mongolian-Mongolia",
+		"en-ME": "English-Montenegro",
+		"sr-ME": "Serbian-Montenegro",
+		"en-MS": "English-Montserrat",
+		"es-MS": "Spanish-Montserrat",
+		"ar-MA": "Arabic-Morocco",
+		"tzm-MA": "Central Atlas Tamazight-Morocco",
+		"fr-MA": "French-Morocco",
+		"zgh-MA": "Standard Moroccan Tamazight-Morocco",
+		"shi-MA": "Tachelhit-Morocco",
+		"mgh-MZ": "Makhuwa-Meetto-Mozambique",
+		"pt-MZ": "Portuguese-Mozambique",
+		"seh-MZ": "Sena-Mozambique",
+		"my-MM": "Burmese-Myanmar (Burma)",
+		"en-MM": "English-Myanmar (Burma)",
+		"af-NA": "Afrikaans-Namibia",
+		"en-NA": "English-Namibia",
+		"naq-NA": "Nama-Namibia",
+		"en-NR": "English-Nauru",
+		"ne-NP": "Nepali-Nepal",
+		"nl-NL": "Dutch-Netherlands",
+		"en-NL": "English-Netherlands",
+		"nds-NL": "Low German-Netherlands",
+		"fy-NL": "Western Frisian-Netherlands",
+		"fr-NC": "French-New Caledonia",
+		"en-NZ": "English-New Zealand",
+		"mi-NZ": "Maori-New Zealand",
+		"es-NI": "Spanish-Nicaragua",
+		"fr-NE": "French-Niger",
+		"ff-NE": "Fulah-Niger",
+		"ha-NE": "Hausa-Niger",
+		"twq-NE": "Tasawaq-Niger",
+		"dje-NE": "Zarma-Niger",
+		"en-NG": "English-Nigeria",
+		"ff-NG": "Fulah-Nigeria",
+		"ha-NG": "Hausa-Nigeria",
+		"ig-NG": "Igbo-Nigeria",
+		"kaj-NG": "Jju-Nigeria",
+		"kcg-NG": "Tyap-Nigeria",
+		"yo-NG": "Yoruba-Nigeria",
+		"en-NU": "English-Niue",
+		"en-NF": "English-Norfolk Island",
+		"ko-KP": "Korean-North Korea",
+		"sq-MK": "Albanian-North Macedonia",
+		"mk-MK": "Macedonian-North Macedonia",
+		"en-MP": "English-Northern Mariana Islands",
+		"en-NO": "English-Norway",
+		"se-NO": "Northern Sami-Norway",
+		"nb-NO": "Norwegian Bokmål-Norway",
+		"nn-NO": "Norwegian Nynorsk-Norway",
+		"ar-OM": "Arabic-Oman",
+		"en-PK": "English-Pakistan",
+		"ps-PK": "Pashto-Pakistan",
+		"pa-PK": "Punjabi-Pakistan",
+		"sd-PK": "Sindhi-Pakistan",
+		"ur-PK": "Urdu-Pakistan",
+		"en-PW": "English-Palau",
+		"ar-PS": "Arabic-Palestinian Territories",
+		"es-PA": "Spanish-Panama",
+		"en-PG": "English-Papua New Guinea",
+		"gn-PY": "Guarani-Paraguay",
+		"es-PY": "Spanish-Paraguay",
+		"qu-PE": "Quechua-Peru",
+		"es-PE": "Spanish-Peru",
+		"ceb-PH": "Cebuano-Philippines",
+		"en-PH": "English-Philippines",
+		"fil-PH": "Filipino-Philippines",
+		"es-PH": "Spanish-Philippines",
+		"en-PN": "English-Pitcairn Islands",
+		"en-PL": "English-Poland",
+		"pl-PL": "Polish-Poland",
+		"en-PT": "English-Portugal",
+		"pt-PT": "Portuguese-Portugal",
+		"en-PR": "English-Puerto Rico",
+		"es-PR": "Spanish-Puerto Rico",
+		"ar-QA": "Arabic-Qatar",
+		"fr-RE": "French-Réunion",
+		"en-RO": "English-Romania",
+		"ro-RO": "Romanian-Romania",
+		"ba-RU": "Bashkir-Russia",
+		"ce-RU": "Chechen-Russia",
+		"cv-RU": "Chuvash-Russia",
+		"en-RU": "English-Russia",
+		"myv-RU": "Erzya-Russia",
+		"os-RU": "Ossetic-Russia",
+		"ru-RU": "Russian-Russia",
+		"sah-RU": "Sakha-Russia",
+		"tt-RU": "Tatar-Russia",
+		"en-RW": "English-Rwanda",
+		"fr-RW": "French-Rwanda",
+		"rw-RW": "Kinyarwanda-Rwanda",
+		"en-WS": "English-Samoa",
+		"it-SM": "Italian-San Marino",
+		"pt-ST": "Portuguese-São Tomé & Príncipe",
+		"ar-SA": "Arabic-Saudi Arabia",
+		"en-SA": "English-Saudi Arabia",
+		"fr-SN": "French-Senegal",
+		"ff-SN": "Fulah-Senegal",
+		"dyo-SN": "Jola-Fonyi-Senegal",
+		"wo-SN": "Wolof-Senegal",
+		"en-RS": "English-Serbia",
+		"sr-RS": "Serbian-Serbia",
+		"en-SC": "English-Seychelles",
+		"fr-SC": "French-Seychelles",
+		"en-SL": "English-Sierra Leone",
+		"ff-SL": "Fulah-Sierra Leone",
+		"zh-SG": "Chinese-Singapore",
+		"en-SG": "English-Singapore",
+		"ms-SG": "Malay-Singapore",
+		"ta-SG": "Tamil-Singapore",
+		"nl-SX": "Dutch-Sint Maarten",
+		"en-SX": "English-Sint Maarten",
+		"es-SX": "Spanish-Sint Maarten",
+		"en-SK": "English-Slovakia",
+		"sk-SK": "Slovak-Slovakia",
+		"en-SI": "English-Slovenia",
+		"sl-SI": "Slovenian-Slovenia",
+		"en-SB": "English-Solomon Islands",
+		"ar-SO": "Arabic-Somalia",
+		"so-SO": "Somali-Somalia",
+		"af-ZA": "Afrikaans-South Africa",
+		"en-ZA": "English-South Africa",
+		"nso-ZA": "Northern Sotho-South Africa",
+		"nr-ZA": "South Ndebele-South Africa",
+		"st-ZA": "Southern Sotho-South Africa",
+		"ss-ZA": "Swati-South Africa",
+		"ts-ZA": "Tsonga-South Africa",
+		"tn-ZA": "Tswana-South Africa",
+		"ve-ZA": "Venda-South Africa",
+		"xh-ZA": "Xhosa-South Africa",
+		"zu-ZA": "Zulu-South Africa",
+		"en-KR": "English-South Korea",
+		"ko-KR": "Korean-South Korea",
+		"ar-SS": "Arabic-South Sudan",
+		"en-SS": "English-South Sudan",
+		"nus-SS": "Nuer-South Sudan",
+		"ast-ES": "Asturian-Spain",
+		"eu-ES": "Basque-Spain",
+		"ca-ES": "Catalan-Spain",
+		"gl-ES": "Galician-Spain",
+		"es-ES": "Spanish-Spain",
+		"si-LK": "Sinhala-Sri Lanka",
+		"ta-LK": "Tamil-Sri Lanka",
+		"fr-BL": "French-St. Barthélemy",
+		"es-BL": "Spanish-St. Barthélemy",
+		"en-SH": "English-St. Helena",
+		"en-KN": "English-St. Kitts & Nevis",
+		"es-KN": "Spanish-St. Kitts & Nevis",
+		"en-LC": "English-St. Lucia",
+		"es-LC": "Spanish-St. Lucia",
+		"fr-MF": "French-St. Martin",
+		"es-MF": "Spanish-St. Martin",
+		"fr-PM": "French-St. Pierre & Miquelon",
+		"es-PM": "Spanish-St. Pierre & Miquelon",
+		"en-VC": "English-St. Vincent & Grenadines",
+		"es-VC": "Spanish-St. Vincent & Grenadines",
+		"ar-SD": "Arabic-Sudan",
+		"en-SD": "English-Sudan",
+		"nl-SR": "Dutch-Suriname",
+		"es-SR": "Spanish-Suriname",
+		"nb-SJ": "Norwegian Bokmål-Svalbard & Jan Mayen",
+		"en-SE": "English-Sweden",
+		"se-SE": "Northern Sami-Sweden",
+		"sv-SE": "Swedish-Sweden",
+		"en-CH": "English-Switzerland",
+		"fr-CH": "French-Switzerland",
+		"de-CH": "German-Switzerland",
+		"it-CH": "Italian-Switzerland",
+		"pt-CH": "Portuguese-Switzerland",
+		"rm-CH": "Romansh-Switzerland",
+		"gsw-CH": "Swiss German-Switzerland",
+		"wae-CH": "Walser-Switzerland",
+		"ar-SY": "Arabic-Syria",
+		"fr-SY": "French-Syria",
+		"syr-SY": "Syriac-Syria",
+		"zh-TW": "Chinese-Taiwan",
+		"en-TW": "English-Taiwan",
+		"trv-TW": "Taroko-Taiwan",
+		"tg-TJ": "Tajik-Tajikistan",
+		"asa-TZ": "Asu-Tanzania",
+		"bez-TZ": "Bena-Tanzania",
+		"en-TZ": "English-Tanzania",
+		"lag-TZ": "Langi-Tanzania",
+		"jmc-TZ": "Machame-Tanzania",
+		"kde-TZ": "Makonde-Tanzania",
+		"mas-TZ": "Masai-Tanzania",
+		"rof-TZ": "Rombo-Tanzania",
+		"rwk-TZ": "Rwa-Tanzania",
+		"sbp-TZ": "Sangu-Tanzania",
+		"ksb-TZ": "Shambala-Tanzania",
+		"sw-TZ": "Swahili-Tanzania",
+		"vun-TZ": "Vunjo-Tanzania",
+		"en-TH": "English-Thailand",
+		"th-TH": "Thai-Thailand",
+		"pt-TL": "Portuguese-Timor-Leste",
+		"ee-TG": "Ewe-Togo",
+		"fr-TG": "French-Togo",
+		"en-TK": "English-Tokelau",
+		"en-TO": "English-Tonga",
+		"to-TO": "Tongan-Tonga",
+		"en-TT": "English-Trinidad & Tobago",
+		"es-TT": "Spanish-Trinidad & Tobago",
+		"ar-TN": "Arabic-Tunisia",
+		"fr-TN": "French-Tunisia",
+		"en-TR": "English-Turkey",
+		"ku-TR": "Kurdish-Turkey",
+		"tr-TR": "Turkish-Turkey",
+		"tk-TM": "Turkmen-Turkmenistan",
+		"en-TC": "English-Turks & Caicos Islands",
+		"es-TC": "Spanish-Turks & Caicos Islands",
+		"en-TV": "English-Tuvalu",
+		"en-UM": "English-U.S. Outlying Islands",
+		"en-VI": "English-U.S. Virgin Islands",
+		"es-VI": "Spanish-U.S. Virgin Islands",
+		"cgg-UG": "Chiga-Uganda",
+		"en-UG": "English-Uganda",
+		"lg-UG": "Ganda-Uganda",
+		"nyn-UG": "Nyankole-Uganda",
+		"xog-UG": "Soga-Uganda",
+		"sw-UG": "Swahili-Uganda",
+		"teo-UG": "Teso-Uganda",
+		"en-UA": "English-Ukraine",
+		"ru-UA": "Russian-Ukraine",
+		"uk-UA": "Ukrainian-Ukraine",
+		"ar-AE": "Arabic-United Arab Emirates",
+		"en-AE": "English-United Arab Emirates",
+		"kw-GB": "Cornish-United Kingdom",
+		"en-GB": "English-United Kingdom",
+		"gd-GB": "Scottish Gaelic-United Kingdom",
+		"cy-GB": "Welsh-United Kingdom",
+		"chr-US": "Cherokee-United States",
+		"en-US": "English-United States",
+		"haw-US": "Hawaiian-United States",
+		"lkt-US": "Lakota-United States",
+		"es-US": "Spanish-United States",
+		"es-UY": "Spanish-Uruguay",
+		"uz-UZ": "Uzbek-Uzbekistan",
+		"en-VU": "English-Vanuatu",
+		"fr-VU": "French-Vanuatu",
+		"it-VA": "Italian-Vatican City",
+		"es-VE": "Spanish-Venezuela",
+		"vi-VN": "Vietnamese-Vietnam",
+		"fr-WF": "French-Wallis & Futuna",
+		"ar-EH": "Arabic-Western Sahara",
+		"ar-001": "Arabic-World",
+		"en-001": "English-World",
+		"eo-001": "Esperanto-World",
+		"io-001": "Ido-World",
+		"ia-001": "Interlingua-World",
+		"jbo-001": "Lojban-World",
+		"yi-001": "Yiddish-World",
+		"ar-YE": "Arabic-Yemen",
+		"bem-ZM": "Bemba-Zambia",
+		"en-ZM": "English-Zambia",
+		"en-ZW": "English-Zimbabwe",
+		"nd-ZW": "North Ndebele-Zimbabwe",
+		"sn-ZW": "Shona-Zimbabwe"
+}
 
 
 async def generate_speech(text, voice, volume):
