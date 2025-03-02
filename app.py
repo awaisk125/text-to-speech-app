@@ -147,7 +147,7 @@ Congo - Kinshasa,Luba-Katanga,lu-CD
 Congo - Kinshasa,Swahili,sw-CD
 Cook Islands,English,en-CK
 Costa Rica,Spanish,es-CR
-Côte d’Ivoire,French,fr-CI
+Côte dIvoire,French,fr-CI
 Croatia,Croatian,hr-HR
 Croatia,English,en-HR
 Cuba,Spanish,es-CU
