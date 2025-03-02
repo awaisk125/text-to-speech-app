@@ -1,3 +1,7 @@
 flask
 edge-tts
+pygame
+ttkbootstrap
+asyncio
+shutil
 gunicorn
