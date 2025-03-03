@@ -23,20 +23,35 @@ LANGUAGE_NAMES = {
 }
 
 async def get_available_voices():
-    """Fetch available voices from edge_tts."""
+    """Fetch available voices from edge_tts and categorize them by language."""
     try:
         voices = await edge_tts.list_voices()
-        return voices
+        categorized_voices = {}
+        for voice in voices:
+            language_code = voice["Locale"]
+            voice_name = voice["ShortName"]
+            if language_code not in categorized_voices:
+                categorized_voices[language_code] = []
+            categorized_voices[language_code].append(voice_name)
+        return categorized_voices
     except Exception as e:
         print(f"Error fetching voices: {e}")
-        return []
+        return {}
+
+# Fetch voices once when the server starts
+VOICES = loop.run_until_complete(get_available_voices())
 
 @app.route("/")
 def home():
-    """Serve the HTML page with languages and voices."""
-    # Fetch voices dynamically
-    voices = loop.run_until_complete(get_available_voices())
-    return render_template("index.html", languages=LANGUAGE_NAMES, voices=voices)
+    """Serve the HTML page with languages."""
+    return render_template("index.html", languages=LANGUAGE_NAMES)
+
+@app.route("/get_voices", methods=["GET"])
+def get_voices():
+    """API endpoint to fetch voices for the selected language."""
+    language_code = request.args.get("language", "")
+    voices = VOICES.get(language_code, [])
+    return jsonify(voices)
 
 @app.route("/speak", methods=["POST"])
 def speak():
