@@ -23,27 +23,30 @@ LANGUAGE_NAMES = {
 }
 
 async def get_available_voices():
-    """Fetch available voices from edge_tts and organize them by language."""
+    """Fetch available voices from edge_tts and format their names."""
     try:
         voices = await edge_tts.list_voices()
-        # Organize voices by language
-        voices_by_language = {}
+        # Format voice names using LANGUAGE_NAMES
+        formatted_voices = []
         for voice in voices:
             language_code = voice["Locale"]
-            if language_code not in voices_by_language:
-                voices_by_language[language_code] = []
-            voices_by_language[language_code].append(voice)
-        return voices_by_language
+            language_name = LANGUAGE_NAMES.get(language_code, language_code)
+            formatted_voices.append({
+                "ShortName": voice["ShortName"],
+                "Locale": language_code,
+                "FriendlyName": f"{voice['ShortName']} ({language_name})"
+            })
+        return formatted_voices
     except Exception as e:
         print(f"Error fetching voices: {e}")
-        return {}
+        return []
 
 @app.route("/")
 def home():
-    """Serve the HTML page with languages and voices."""
-    # Fetch voices dynamically and organize them by language
-    voices_by_language = loop.run_until_complete(get_available_voices())
-    return render_template("index.html", languages=LANGUAGE_NAMES, voices_by_language=voices_by_language)
+    """Serve the HTML page with formatted voices."""
+    # Fetch voices dynamically and format their names
+    voices = loop.run_until_complete(get_available_voices())
+    return render_template("index.html", voices=voices)
 
 @app.route("/speak", methods=["POST"])
 def speak():
