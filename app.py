@@ -2,15 +2,13 @@ from flask import Flask, request, jsonify, send_file, render_template
 import asyncio
 import edge_tts
 import os
+import uuid
 
 app = Flask(__name__)
 
 # Store the event loop
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
-
-# Output file path
-OUTPUT_FILE = "output.mp3"
 
 # Language and voice mapping (example data)
 LANGUAGE_NAMES = {
@@ -671,7 +669,13 @@ def home():
     """Serve the HTML page with languages and voices."""
     # Fetch voices dynamically and organize them by language
     voices_by_language = loop.run_until_complete(get_available_voices())
-    return render_template("index.html", languages=LANGUAGE_NAMES, voices_by_language=voices_by_language)
+
+    # Filter LANGUAGE_NAMES to include only languages with available voices
+    filtered_languages = {
+        code: name for code, name in LANGUAGE_NAMES.items() if code in voices_by_language
+    }
+
+    return render_template("index.html", languages=filtered_languages, voices_by_language=voices_by_language)
 
 @app.route("/speak", methods=["POST"])
 def speak():
@@ -683,29 +687,53 @@ def speak():
     if not text:
         return jsonify({"error": "No text provided"}), 400
 
-    # Generate speech
-    success = loop.run_until_complete(generate_speech(text, voice))
+    # Generate a unique filename
+    unique_id = str(uuid.uuid4())
+    output_file = f"output_{unique_id}.mp3"
 
-    if not success or not os.path.exists(OUTPUT_FILE):
+    # Generate speech
+    success = loop.run_until_complete(generate_speech(text, voice, output_file))
+
+    if not success or not os.path.exists(output_file):
         return jsonify({"error": "Failed to generate speech"}), 500
 
-    # Return the generated audio file
-    return send_file(
-        OUTPUT_FILE,
-        as_attachment=True,
-        download_name="speech.mp3",
+    # Return the generated audio file as a stream
+    response = send_file(
+        output_file,
+        as_attachment=False,  # Do not treat as a download
         mimetype="audio/mpeg"
     )
 
-async def generate_speech(text, voice):
+    # Delete the file after sending it
+    @response.call_on_close
+    def delete_file():
+        try:
+            os.remove(output_file)
+        except Exception as e:
+            print(f"Error deleting file: {e}")
+
+    return response
+
+async def generate_speech(text, voice, output_file):
     """Generate speech and save it as an MP3 file."""
     try:
         tts = edge_tts.Communicate(text, voice=voice)
-        await tts.save(OUTPUT_FILE)
+        await tts.save(output_file)
         return True
     except Exception as e:
         print(f"Error generating speech: {e}")
         return False
+
+@app.route("/cleanup", methods=["POST"])
+def cleanup():
+    """Clean up generated audio files."""
+    try:
+        for file in os.listdir("."):
+            if file.startswith("output_") and file.endswith(".mp3"):
+                os.remove(file)
+        return jsonify({"message": "Cleanup successful"}), 200
+    except Exception as e:
+        return jsonify({"error": f"Failed to clean up: {e}"}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
