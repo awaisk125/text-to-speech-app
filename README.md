@@ -1,4 +1,6 @@
 Text-to-Speech Flask App
+
+
 Purpose
 
 This app allows users to convert text into speech using a web interface. It leverages the edge_tts library to generate speech in various languages and voices. The app is built with Flask for the backend and Bootstrap for the frontend, providing a simple and responsive user interface.
