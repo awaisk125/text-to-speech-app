@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://voicenova.infy.uk/sitemap.xml
