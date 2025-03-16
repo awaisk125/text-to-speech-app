@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://voicenova.infy.uk/sitemap.xml
+Allow: /
+https://github.com/awaisk125/text-to-speech-app/blob/main/sitemap.xml
