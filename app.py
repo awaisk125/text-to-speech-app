@@ -7,26 +7,6 @@ import uuid
 app = Flask(__name__)
 
 
-# Security Configuration
-ALLOWED_DOMAIN = "https://voicenova.site"  # Your website domain
-
-@app.before_request
-def check_referer():
-    """Block requests not coming from your website"""
-    # Skip security checks for static files (if any)
-    if request.path.startswith('/static/'):
-        return
-        
-    referer = request.headers.get('Referer')
-    if not referer or not referer.startswith(ALLOWED_DOMAIN):
-        abort(403, "Access denied: Please use this app through voicenova.site")
-
-@app.after_request
-def add_csp(response):
-    """Prevent embedding on other sites"""
-    response.headers['Content-Security-Policy'] = f"frame-ancestors {ALLOWED_DOMAIN};"
-    return response
-
 
 
 # Store the event loop
